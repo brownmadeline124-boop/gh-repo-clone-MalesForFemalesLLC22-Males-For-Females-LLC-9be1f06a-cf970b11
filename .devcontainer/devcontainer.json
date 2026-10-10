@@ -1,0 +1,3533 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "Ubuntu",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/base:resolute",
+	"features": {
+		"ghcr.io/devcontainers/features/anaconda:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/aws-cli:1": {
+			"verbose": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/azure-cli:1": {
+			"installBicep": true,
+			"installUsingPython": true,
+			"version": "latest",
+			"bicepVersion": "latest"
+		},
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"installOhMyZsh": true,
+			"installOhMyZshConfig": true,
+			"upgradePackages": true,
+			"sudoers": true,
+			"installSsl": true,
+			"username": "devcontainer"
+		},
+		"ghcr.io/devcontainers/features/conda:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/copilot-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/desktop-lite:1": {
+			"version": "latest",
+			"noVncVersion": "1.6.0",
+			"password": "vscode"
+		},
+		"ghcr.io/devcontainers/features/docker-in-docker:4": {
+			"moby": true,
+			"azureDnsAutoDetection": true,
+			"installDockerBuildx": true,
+			"iptablesSwitchAtRuntime": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+			"moby": true,
+			"installDockerBuildx": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/dotnet:2": {
+			"tabCompletions": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/git:1": {
+			"ppa": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/git-lfs:1": {
+			"autoPull": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/github-cli:1": {
+			"installDirectlyFromGitHubRelease": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/go:1": {
+			"installGoTools": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/hugo:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/nix:1": {
+			"multiUser": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/node:2": {
+			"nodeGypDependencies": true,
+			"version": "lts"
+		},
+		"ghcr.io/devcontainers/features/nvidia-cuda:3": {
+			"cudaVersion": "12.5"
+		},
+		"ghcr.io/devcontainers/features/oryx:2": {},
+		"ghcr.io/devcontainers/features/php:1": {
+			"installComposer": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/powershell:2": {
+			"preserveHistory": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/python:1": {
+			"installTools": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/ruby:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/rust:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/sshd:1": {
+			"version": "latest",
+			"gatewayPorts": "no"
+		},
+		"ghcr.io/devcontainers/features/terraform:1": {
+			"version": "latest"
+		},
+		"ghcr.io/iterative/features/dvc:1": {},
+		"ghcr.io/iterative/features/nvtop:1": {},
+		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+			"upgradePackages": true,
+			"packages": ""
+		},
+		"ghcr.io/rocker-org/devcontainer-features/miniforge:2": {
+			"version": "latest",
+			"variant": "Miniforge3"
+		},
+		"ghcr.io/rocker-org/devcontainer-features/pandoc:1": {
+			"version": "latest"
+		},
+		"ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/rocker-org/devcontainer-features/r-apt:0": {
+			"useTesting": true,
+			"vscodeRSupport": "none"
+		},
+		"ghcr.io/rocker-org/devcontainer-features/r-dependent-packages:0": {
+			"when": "onCreate"
+		},
+		"ghcr.io/rocker-org/devcontainer-features/r-history:0": {},
+		"ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
+			"packages": ""
+		},
+		"ghcr.io/rocker-org/devcontainer-features/r-rig:1": {
+			"version": "release"
+		},
+		"ghcr.io/rocker-org/devcontainer-features/renv-cache:0": {},
+		"ghcr.io/rocker-org/devcontainer-features/rstudio-server:0": {
+			"singleUser": true,
+			"version": "stable"
+		},
+		"ghcr.io/meaningful-ooo/devcontainer-features/fish:2": {
+			"fisher": true
+		},
+		"ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2": {},
+		"ghcr.io/mpriscella/features/fastly:1": {
+			"version": "latest"
+		},
+		"ghcr.io/mpriscella/features/helm-chart-testing:1": {
+			"version": "latest"
+		},
+		"ghcr.io/mpriscella/features/kind:1": {
+			"version": "latest"
+		},
+		"ghcr.io/mpriscella/features/sops:1": {
+			"version": "latest"
+		},
+		"ghcr.io/eitsupi/devcontainer-features/beads-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/eitsupi/devcontainer-features/duckdb-cli:1": {
+			"version": "latest",
+			"extensions": ""
+		},
+		"ghcr.io/eitsupi/devcontainer-features/go-task:1": {
+			"version": "latest"
+		},
+		"ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {
+			"jqVersion": "latest"
+		},
+		"ghcr.io/eitsupi/devcontainer-features/jujutsu-cli:1": {
+			"configureUserFromGit": true,
+			"version": "latest"
+		},
+		"ghcr.io/eitsupi/devcontainer-features/mdbook:1": {
+			"version": "latest"
+		},
+		"ghcr.io/eitsupi/devcontainer-features/nushell:0": {
+			"installPlugins": true,
+			"version": "latest"
+		},
+		"ghcr.io/dhoeric/features/act:1": {},
+		"ghcr.io/dhoeric/features/aztfy:1": {},
+		"ghcr.io/dhoeric/features/conftest:1": {},
+		"ghcr.io/dhoeric/features/flyctl:1": {},
+		"ghcr.io/dhoeric/features/google-cloud-cli:1": {},
+		"ghcr.io/dhoeric/features/hadolint:1": {},
+		"ghcr.io/dhoeric/features/k6:1": {},
+		"ghcr.io/dhoeric/features/k9s:1": {},
+		"ghcr.io/dhoeric/features/mizu:1": {},
+		"ghcr.io/dhoeric/features/opa:1": {},
+		"ghcr.io/dhoeric/features/oras:1": {},
+		"ghcr.io/dhoeric/features/stern:1": {},
+		"ghcr.io/dhoeric/features/terraform-docs:1": {},
+		"ghcr.io/dhoeric/features/terraformer:1": {},
+		"ghcr.io/dhoeric/features/tfsec:1": {},
+		"ghcr.io/dhoeric/features/trivy:1": {},
+		"ghcr.io/rchaganti/vsc-devcontainer-features/azurebicep:1": {},
+		"ghcr.io/rchaganti/vsc-devcontainer-features/cosign:1": {},
+		"ghcr.io/rchaganti/vsc-devcontainer-features/cuelang:1": {},
+		"ghcr.io/rchaganti/vsc-devcontainer-features/gitsign:1": {},
+		"ghcr.io/rchaganti/vsc-devcontainer-features/tinygo:1": {},
+		"ghcr.io/rchaganti/vsc-devcontainer-features/wabt:1": {},
+		"ghcr.io/customink/codespaces-features/common-amzn:1": {},
+		"ghcr.io/customink/codespaces-features/docker-in-docker-amzn:1": {},
+		"ghcr.io/customink/codespaces-features/docker-log-level:1": {
+			"level": "debug"
+		},
+		"ghcr.io/customink/codespaces-features/sam-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/stu-bell/devcontainer-features/claude-code:0": {},
+		"ghcr.io/stu-bell/devcontainer-features/cursor-cli:0": {},
+		"ghcr.io/stu-bell/devcontainer-features/gemini-cli:0": {
+			"gemini_version": "latest"
+		},
+		"ghcr.io/stu-bell/devcontainer-features/homebrew:1": {},
+		"ghcr.io/stu-bell/devcontainer-features/neovim:0": {},
+		"ghcr.io/stu-bell/devcontainer-features/node:0": {
+			"nodeGypDependencies": true,
+			"installYarnUsingApt": true,
+			"pnpmVersion": "latest"
+		},
+		"ghcr.io/stu-bell/devcontainer-features/open-code:0": {},
+		"ghcr.io/stu-bell/devcontainer-features/python:0": {
+			"apt_get": true,
+			"installTools": true,
+			"min_python_version": "3.15"
+		},
+		"ghcr.io/stu-bell/devcontainer-features/ttyd:0": {},
+		"ghcr.io/stuartleeks/dev-container-features/add-host:1": {},
+		"ghcr.io/stuartleeks/dev-container-features/azd-cli-persistence:0": {},
+		"ghcr.io/stuartleeks/dev-container-features/azure-cli-persistence:0": {},
+		"ghcr.io/stuartleeks/dev-container-features/dev-tunnels:0": {},
+		"ghcr.io/stuartleeks/dev-container-features/github-copilot-cli:0": {},
+		"ghcr.io/stuartleeks/dev-container-features/railway-cli:0": {},
+		"ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
+		"ghcr.io/guiyomh/features/golangci-lint:0": {
+			"version": "latest"
+		},
+		"ghcr.io/guiyomh/features/gomarkdoc:0": {
+			"version": "latest"
+		},
+		"ghcr.io/guiyomh/features/goreleaser:0": {
+			"version": "latest"
+		},
+		"ghcr.io/guiyomh/features/gotestsum:0": {
+			"version": "latest"
+		},
+		"ghcr.io/guiyomh/features/just:0": {
+			"version": "latest"
+		},
+		"ghcr.io/guiyomh/features/mage:0": {
+			"version": "latest"
+		},
+		"ghcr.io/guiyomh/features/pact-go:0": {
+			"version": "2.0.0-beta.10"
+		},
+		"ghcr.io/guiyomh/features/vim:0": {},
+		"ghcr.io/natescherer/devcontainers-custom-features/hypermodern-python:1": {},
+		"ghcr.io/natescherer/devcontainers-custom-features/k9s:1": {
+			"version": "latest"
+		},
+		"ghcr.io/natescherer/devcontainers-custom-features/powershell-resources:1": {},
+		"ghcr.io/joshspicer/features/mitm-proxy:1": {
+			"installRootCerts": true,
+			"version": "latest"
+		},
+		"ghcr.io/joshspicer/features/oci-utils:1": {
+			"orasVersion": "0.15.1"
+		},
+		"ghcr.io/shyim/devcontainers-features/blackfire:0": {},
+		"ghcr.io/shyim/devcontainers-features/bun:0": {},
+		"ghcr.io/shyim/devcontainers-features/php:0": {
+			"installComposer": true,
+			"version": "8.4"
+		},
+		"ghcr.io/shyim/devcontainers-features/shopware-cli:0": {},
+		"ghcr.io/shyim/devcontainers-features/symfony-cli:0": {},
+		"ghcr.io/jungaretti/features/make:1": {},
+		"ghcr.io/jungaretti/features/ripgrep:1": {},
+		"ghcr.io/jungaretti/features/vim:1": {},
+		"ghcr.io/tlc-sundown/devcontainers-features/msquic:1": {
+			"version": "latest"
+		},
+		"ghcr.io/enricosecondulfo/devcontainer-features/volta:1": {
+			"version": "latest"
+		},
+		"ghcr.io/saml-to/devcontainer-features/assume-aws-role:2": {},
+		"ghcr.io/rjfmachado/devcontainer-features/cloud-native:1": {
+			"kubectl": "latest"
+		},
+		"ghcr.io/lukewiwa/features/shellcheck:0": {
+			"version": "stable"
+		},
+		"ghcr.io/lukewiwa/features/wait-for-it:0": {
+			"host": "localhost"
+		},
+		"ghcr.io/rio/features/chezmoi:1": {},
+		"ghcr.io/rio/features/gum:1": {},
+		"ghcr.io/rio/features/k3d:1": {},
+		"ghcr.io/rio/features/k9s:1": {},
+		"ghcr.io/rio/features/kustomize:1": {},
+		"ghcr.io/rio/features/skaffold:2": {},
+		"ghcr.io/rio/features/vcluster:1": {},
+		"ghcr.io/KusionStack/devcontainer-features/kusion:0": {},
+		"ghcr.io/edouard-lopez/devcontainer-features/bats:0": {
+			"version": "latest"
+		},
+		"ghcr.io/jlaundry/devcontainer-features/azure-functions-core-tools:1": {
+			"version": "latest"
+		},
+		"ghcr.io/jlaundry/devcontainer-features/mssql-odbc-driver:1": {
+			"version": "17"
+		},
+		"ghcr.io/mikaello/devcontainer-features/kotlinc:1": {},
+		"ghcr.io/mikaello/devcontainer-features/modern-shell-utils:3": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/actionlint:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/ast-grep:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/bat:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/ccc:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/codex:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/colibri:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/copa:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/crane:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/cyclonedx:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/delta:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/difftastic:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/fd:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/flux:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/fx:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/fzf:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/gic:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/gitai:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/gitleaks:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/glow:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/herdr:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/hurl:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/hyperfine:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/jj:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/jnv:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/just:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/k3d:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/kyverno:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/lazygit:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/markitdown:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/mise:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/notation:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/officecli:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/open-code-review:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/opencode:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/ripgrep:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/rtk:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/ruff:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/skillspector:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/skopeo:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/strix:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/tmux:2": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/uv:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/yazi:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/zarf:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/zizmor:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/zoxide:1": {},
+		"ghcr.io/oleksis/devcontainer-features/playground-cli:5": {
+			"version": "latest"
+		},
+		"ghcr.io/oleksis/devcontainer-features/python-launcher:1": {
+			"version": "latest"
+		},
+		"ghcr.io/ebaskoro/devcontainer-features/emscripten:1": {},
+		"ghcr.io/ebaskoro/devcontainer-features/grain:0": {},
+		"ghcr.io/ebaskoro/devcontainer-features/scala:1": {
+			"version": "latest",
+			"sbtVersion": "latest"
+		},
+		"ghcr.io/ebaskoro/devcontainer-features/sdkman:1": {
+			"candidate": "activemq"
+		},
+		"ghcr.io/warrenbuckley/codespace-features/smtp4dev:1": {
+			"autorun": true,
+			"webport": "5000",
+			"smtpport": "25",
+			"imapport": "143"
+		},
+		"ghcr.io/warrenbuckley/codespace-features/sqlite:1": {},
+		"ghcr.io/roost-io/features/roost:1": {
+			"preemptible": "true"
+		},
+		"ghcr.io/lentzi90/features/clusterctl:0": {
+			"version": "v1.6.6"
+		},
+		"ghcr.io/lentzi90/features/kubeadm:0": {
+			"version": "v1.29.6"
+		},
+		"ghcr.io/lentzi90/features/kwok:0": {
+			"version": "v0.5.2"
+		},
+		"ghcr.io/lentzi90/features/tilt:0": {
+			"version": "v0.33.17"
+		},
+		"ghcr.io/lentzi90/features/yamlfmt:0": {
+			"version": "v0.14.0"
+		},
+		"ghcr.io/robsyme/features/nextflow:1": {},
+		"ghcr.io/robsyme/features/nf-test:1": {},
+		"devwasm.azurecr.io/dev-wasm/dev-wasm-feature/dotnet-wasi:0": {},
+		"devwasm.azurecr.io/dev-wasm/dev-wasm-feature/golang-wasi:0": {
+			"version": "0.33.0"
+		},
+		"devwasm.azurecr.io/dev-wasm/dev-wasm-feature/rust-wasi:0": {},
+		"devwasm.azurecr.io/dev-wasm/dev-wasm-feature/wasmtime-wasi:0": {
+			"version": "24"
+		},
+		"ghcr.io/shinepukur/devcontainer-features/vale:1": {
+			"version": "latest"
+		},
+		"ghcr.io/msclock/features/gitlab-ci-local:0": {
+			"version": "latest"
+		},
+		"ghcr.io/msclock/features/vcpkg:2": {
+			"vcpkgversion": "stable"
+		},
+		"ghcr.io/withfig/features/fig:1": {
+			"version": "latest",
+			"channel": "stable"
+		},
+		"ghcr.io/mamba-org/devcontainer-features/micromamba:1": {
+			"autoActivate": true,
+			"version": "latest",
+			"channels": "conda-forge",
+			"packages": ""
+		},
+		"ghcr.io/astronomer/devcontainer-features/astro-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/eliises/devcontainer-features/bash-profile:1": {
+			"command": "alias k=kubectl",
+			"file": "/etc/bash.bashrc"
+		},
+		"ghcr.io/eliises/devcontainer-features/devcontainers-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/frntn/devcontainers-features/gitleaks:1": {
+			"version": "latest"
+		},
+		"ghcr.io/frntn/devcontainers-features/newman:1": {
+			"version": "latest"
+		},
+		"ghcr.io/frntn/devcontainers-features/postman:1": {},
+		"ghcr.io/frntn/devcontainers-features/prism:1": {
+			"version": "latest"
+		},
+		"ghcr.io/christophermacgown/devcontainer-features/direnv:1": {
+			"autoEnable": true,
+			"architecture": "i386"
+		},
+		"ghcr.io/christophermacgown/devcontainer-features/easy-container-hooks:1": {},
+		"ghcr.io/christophermacgown/devcontainer-features/mcfly:1": {
+			"autoEnable": true,
+			"architecture": "aarch64"
+		},
+		"ghcr.io/christophermacgown/devcontainer-features/minio-client:1": {
+			"vendor": "linux"
+		},
+		"ghcr.io/balazs23/devcontainers-features/bazel:1": {
+			"bazelisk": "latest"
+		},
+		"ghcr.io/balazs23/devcontainers-features/nx:1": {
+			"version": "latest"
+		},
+		"ghcr.io/mickeahlinder/devcontainer-features/tfenv:1": {
+			"version": "3.0.0"
+		},
+		"ghcr.io/jckimble/devcontainer-features/hledger:1": {},
+		"ghcr.io/jckimble/devcontainer-features/ngrok:3": {
+			"version": "stable"
+		},
+		"ghcr.io/r3dpoint/devcontainer-features/tailwindcss-standalone-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/trunk-io/devcontainer-feature/trunk:1": {},
+		"ghcr.io/swift-server-community/swift-devcontainer-features/SwiftFormat:0": {
+			"version": "latest"
+		},
+		"ghcr.io/swift-server-community/swift-devcontainer-features/foundationnetworking:1": {},
+		"ghcr.io/swift-server-community/swift-devcontainer-features/jemalloc:1": {},
+		"ghcr.io/swift-server-community/swift-devcontainer-features/sqlite:1": {},
+		"ghcr.io/swift-server-community/swift-devcontainer-features/swift-format:0": {
+			"version": "default"
+		},
+		"ghcr.io/kvokka/features/aicommit2:1": {
+			"version": "latest"
+		},
+		"ghcr.io/kvokka/features/codegpt:1": {
+			"version": "latest"
+		},
+		"ghcr.io/kvokka/features/lumen:1": {},
+		"ghcr.io/gickis/devcontainer-features/confd:1": {
+			"version": "latest"
+		},
+		"ghcr.io/gickis/devcontainer-features/gomplate:1": {
+			"version": "latest"
+		},
+		"ghcr.io/gickis/devcontainer-features/kubeconform:1": {
+			"version": "latest"
+		},
+		"ghcr.io/gickis/devcontainer-features/kubeseal:1": {
+			"version": "latest"
+		},
+		"ghcr.io/sonikro/devcontainer-features/semgrep:1": {},
+		"ghcr.io/jasonthedeveloper/features/sbom:1": {
+			"version": "latest"
+		},
+		"ghcr.io/jasonthedeveloper/features/trivy:1": {
+			"version": "latest"
+		},
+		"ghcr.io/dasiths/devcontainer-features/grype:1": {
+			"version": "latest",
+			"destination_dir": "/usr/local/bin"
+		},
+		"ghcr.io/dasiths/devcontainer-features/syft:1": {
+			"version": "latest",
+			"destination_dir": "/usr/local/bin"
+		},
+		"ghcr.io/flexwie/devcontainer-features/maelstrom:1": {},
+		"ghcr.io/flexwie/devcontainer-features/op:1": {},
+		"ghcr.io/flexwie/devcontainer-features/pulumi:1": {},
+		"ghcr.io/flexwie/devcontainer-features/terraspace:1": {},
+		"ghcr.io/ksh5022/devcontainer-features/d2:1": {
+			"version": "latest"
+		},
+		"ghcr.io/dapr/cli/dapr-cli:0": {
+			"version": "latest"
+		},
+		"ghcr.io/azutake/devcontainer-features/go-packages-install:0": {},
+		"ghcr.io/michidk/devcontainers-features/bun:1": {},
+		"ghcr.io/michidk/devcontainers-features/typos:1": {},
+		"ghcr.io/michidk/devcontainers-features/typst:1": {
+			"version": "latest"
+		},
+		"ghcr.io/wxw-matt/devcontainer-features/apt:0": {
+			"clean_cache": true,
+			"local_mirror": true
+		},
+		"ghcr.io/wxw-matt/devcontainer-features/command_runner:0": {},
+		"ghcr.io/wxw-matt/devcontainer-features/script_runner:0": {},
+		"ghcr.io/vercellone/devcontainer-features/sf-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/vercellone/devcontainer-features/sfdx-cli:1": {
+			"url": "https://developer.salesforce.com/media/salesforce-cli/sfdx/channels/stable/sfdx-linux-x64.tar.gz"
+		},
+		"ghcr.io/joedmck/devcontainer-features/cdktf:1": {},
+		"ghcr.io/joedmck/devcontainer-features/cloudflared:1": {},
+		"ghcr.io/joedmck/devcontainer-features/serve:1": {},
+		"ghcr.io/joedmck/devcontainer-features/wrangler:1": {},
+		"ghcr.io/codeman99/features/circleci-cli:1": {
+			"completions": true,
+			"telemetry": "enable"
+		},
+		"ghcr.io/codeman99/features/deno-cache:0": {},
+		"ghcr.io/codeman99/features/elm-lang:0": {
+			"installFormat": true,
+			"installReview": true,
+			"installTest": true
+		},
+		"ghcr.io/codeman99/features/exercism-cli:1": {
+			"os": "darwin"
+		},
+		"ghcr.io/devcontainers-community/templates/dart:1": {},
+		"ghcr.io/devcontainers-community/features/tinygo:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-community/features/surrealdb:1": {},
+		"ghcr.io/devcontainers-community/features/bazel:1": {
+			"bazelisk_version": "latest",
+			"buildifier_version": "latest"
+		},
+		"ghcr.io/devcontainers-community/features/direnv:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-community/features/llvm:3": {},
+		"ghcr.io/devcontainers-community/features/deno:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-community/npm-features/prettier:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-community/npm-features/typescript:1": {
+			"version": "latest"
+		},
+		"ghcr.io/lee-orr/rusty-dev-containers/bacon:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/cargo-audit:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/cargo-binstall:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/cargo-bundle:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/cargo-deny:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/cargo-expand:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/cargo-llvm-cov:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/cargo-make:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/cargo-mobile:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/cargo-nextest:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/cargo-watch:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/cargo-web:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/cosmonic:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/dexterous_developer:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/dioxus:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/fermyon-spin:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/helix:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/honggfuzz:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/mprocs:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/rust_windows_msvc:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/sccache:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/spin-message-trigger:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/wasm-bindgen-cli:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/wasm-server-runner:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/wasm32-unknown-unknown:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/wasmcloud:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/zellij:0": {},
+		"ghcr.io/brokeyourbike/devcontainer-features/mockery-go:0": {
+			"version": "latest"
+		},
+		"ghcr.io/brokeyourbike/devcontainer-features/reflex:0": {
+			"version": "latest"
+		},
+		"ghcr.io/brokeyourbike/devcontainer-features/staticcheck:0": {
+			"version": "latest"
+		},
+		"ghcr.io/nikitakurpas/features/vapor-toolbox:1": {
+			"version": "main"
+		},
+		"ghcr.io/joshuanianji/devcontainer-features/aws-cli-persistence:1": {},
+		"ghcr.io/joshuanianji/devcontainer-features/claude-code-persistence:1": {},
+		"ghcr.io/joshuanianji/devcontainer-features/gcloud-cli-persistence:1": {},
+		"ghcr.io/joshuanianji/devcontainer-features/gel-cli:1": {},
+		"ghcr.io/joshuanianji/devcontainer-features/github-cli-persistence:1": {},
+		"ghcr.io/joshuanianji/devcontainer-features/google-cloud-cli:1": {},
+		"ghcr.io/joshuanianji/devcontainer-features/lamdera:1": {
+			"version": "latest"
+		},
+		"ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store:1": {},
+		"ghcr.io/joshuanianji/devcontainer-features/opencode-persistence:1": {},
+		"ghcr.io/joshuanianji/devcontainer-features/terraform-cli-persistence:1": {},
+		"ghcr.io/joshuanianji/devcontainer-features/token-monitor-agent:1": {},
+		"ghcr.io/nullcoder/devcontainer-features/stripe-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/jayree/devcontainer-features/npm-registry:1": {
+			"registry": "@SCOPE:registry=https://npm.pkg.github.com\n//npm.pkg.github.com/:_authToken=${localEnv:GITHUB_TOKEN}"
+		},
+		"ghcr.io/jayree/devcontainer-features/sf-autocomplete:1": {},
+		"ghcr.io/jayree/devcontainer-features/sf-plugins:1": {
+			"plugins": "@jayree/sfdx-plugin-manifest,@jayree/sfdx-plugin-org,@jayree/sfdx-plugin-prettier,@jayree/sfdx-plugin-source"
+		},
+		"ghcr.io/bdsoha/devcontainers/custom-root-ca:1": {
+			"bundle": true,
+			"verify": true,
+			"source": "https://netfree.link/cacert/isp/018/ca.crt"
+		},
+		"ghcr.io/tomharvey/devcontainer-features/aws-sso-util:1": {
+			"version": "latest"
+		},
+		"ghcr.io/azure/azure-dev/azd:0": {
+			"version": "stable"
+		},
+		"ghcr.io/azure/azure-dev/azd-persistence:0": {},
+		"ghcr.io/letsramp/devcontainer-features/skyramp:1": {},
+		"ghcr.io/earthly/devcontainer-features/earthly:1": {
+			"bootstrap": true
+		},
+		"ghcr.io/stateful/devcontainer-features/runme:0": {
+			"version": "latest"
+		},
+		"ghcr.io/itsmechlark/features/postgresql:1": {
+			"version": "latest"
+		},
+		"ghcr.io/marcozac/devcontainer-features/atlas:1": {
+			"communityEdition": true,
+			"version": "latest",
+			"goVersion": "1.20.7"
+		},
+		"ghcr.io/marcozac/devcontainer-features/buf:1": {
+			"installProtocGenBufBreaking": true,
+			"installProtocGenBufLint": true,
+			"version": "latest"
+		},
+		"ghcr.io/marcozac/devcontainer-features/gofumpt:1": {
+			"version": "latest"
+		},
+		"ghcr.io/marcozac/devcontainer-features/goreleaser:1": {
+			"version": "latest"
+		},
+		"ghcr.io/marcozac/devcontainer-features/protoc-gen-entgrpc:1": {
+			"version": "latest"
+		},
+		"ghcr.io/marcozac/devcontainer-features/shellcheck:1": {
+			"version": "latest"
+		},
+		"ghcr.io/elanhasson/devcontainer-features/digitalocean-doctl-cli-persistence:1": {},
+		"ghcr.io/tiwaojo/features/mcap-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/julialang/devcontainer-features/julia:1": {
+			"channel": "release"
+		},
+		"ghcr.io/robbert229/devcontainer-features/ko:1": {
+			"version": "0.14.1"
+		},
+		"ghcr.io/robbert229/devcontainer-features/opentofu:1": {
+			"version": "1.6.0-alpha3"
+		},
+		"ghcr.io/robbert229/devcontainer-features/operator-sdk:1": {
+			"version": "v1.33.0"
+		},
+		"ghcr.io/robbert229/devcontainer-features/postgresql-client:1": {
+			"version": "13"
+		},
+		"ghcr.io/nordcominc/devcontainer-features/android-sdk:2": {},
+		"ghcr.io/maks1ms/devcontainers-features/wine:0": {},
+		"ghcr.io/schlich/cst-devcontainer-feature/container-structure-test:1": {},
+		"ghcr.io/schlich/devcontainer-features/container-structure-test:1": {},
+		"ghcr.io/schlich/devcontainer-features/cypress:1": {},
+		"ghcr.io/schlich/devcontainer-features/grafana:1": {},
+		"ghcr.io/schlich/devcontainer-features/helix:1": {},
+		"ghcr.io/schlich/devcontainer-features/helmfile:1": {},
+		"ghcr.io/schlich/devcontainer-features/jenkins-x:1": {},
+		"ghcr.io/schlich/devcontainer-features/jujutsu:0": {
+			"version": "latest"
+		},
+		"ghcr.io/schlich/devcontainer-features/just:0": {
+			"version": "latest"
+		},
+		"ghcr.io/schlich/devcontainer-features/node-exporter:1": {},
+		"ghcr.io/schlich/devcontainer-features/openslides:1": {
+			"includeTestingTool": true
+		},
+		"ghcr.io/schlich/devcontainer-features/pigz:0": {},
+		"ghcr.io/schlich/devcontainer-features/pixz:0": {},
+		"ghcr.io/schlich/devcontainer-features/playwright:0": {},
+		"ghcr.io/schlich/devcontainer-features/powerlevel10k:1": {},
+		"ghcr.io/schlich/devcontainer-features/rye:1": {},
+		"ghcr.io/schlich/devcontainer-features/starship:0": {},
+		"ghcr.io/raucha/devcontainer-features/color:1": {
+			"favorite": "red"
+		},
+		"ghcr.io/raucha/devcontainer-features/hello:1": {
+			"greeting": "hey"
+		},
+		"ghcr.io/raucha/devcontainer-features/pytorch:1": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-aws-cli:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-bash:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-bat:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-bottom:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-broot:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-bun:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-ctop:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-curl:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-d2:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-deno:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-docker-outside-of-docker:0": {
+			"installDockerCompose": true
+		},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-fswatch:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-gdb:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-gh-cli:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-git:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-go:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-gpg:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-helm:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-jq:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-k3d:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-kubectl:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-lazygit:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-mage2postman:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-magento-cloud-cli:0": {
+			"shellType": "zsh"
+		},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-make:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-n98-magerun2:0": {
+			"version": "10.1.0"
+		},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-nano:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-navi:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-node:0": {
+			"corepack": true,
+			"pnpmVersion": "latest"
+		},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-nushell:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-ohmyzsh:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-opencode:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-openssh:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-opentofu:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-patch:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-pgsql-client:0": {
+			"version": "17"
+		},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-php-bcmath:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-php-composer:0": {
+			"version": "2.10.3"
+		},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-php-ftp:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-php-gd:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-php-intl:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-php-ldap:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-php-magento:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-php-mariadb:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-php-mssql:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-php-mysql:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-php-pcntl:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-php-pgsql:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-php-posix:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-php-redis:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-php-soap:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-php-sockets:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-php-xdebug:0": {
+			"version": "3.5.3"
+		},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-php-zip:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-phpstorm-libs:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-ripgrep:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-sentry-cli:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-sig:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-sshs:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-starship:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-sudo:0": {},
+		"ghcr.io/cirolosapio/devcontainers-features/alpine-user:0": {},
+		"ghcr.io/audacioustux/devcontainers/argo:1": {
+			"argocd": true,
+			"argo": true
+		},
+		"ghcr.io/audacioustux/devcontainers/aws-sam-cli:1": {},
+		"ghcr.io/audacioustux/devcontainers/bazel:1": {},
+		"ghcr.io/audacioustux/devcontainers/bun:1": {},
+		"ghcr.io/audacioustux/devcontainers/cilium:1": {},
+		"ghcr.io/audacioustux/devcontainers/common-utils-extras:1": {},
+		"ghcr.io/audacioustux/devcontainers/ebort:1": {},
+		"ghcr.io/audacioustux/devcontainers/flyctl:1": {},
+		"ghcr.io/audacioustux/devcontainers/graalvm:1": {
+			"java": "21"
+		},
+		"ghcr.io/audacioustux/devcontainers/k9s:1": {},
+		"ghcr.io/audacioustux/devcontainers/knative:1": {},
+		"ghcr.io/audacioustux/devcontainers/kubebuilder:1": {},
+		"ghcr.io/audacioustux/devcontainers/kustomize:1": {},
+		"ghcr.io/audacioustux/devcontainers/localstack:1": {},
+		"ghcr.io/audacioustux/devcontainers/mirrord:1": {},
+		"ghcr.io/audacioustux/devcontainers/operator-sdk:1": {},
+		"ghcr.io/audacioustux/devcontainers/pack-cli:1": {},
+		"ghcr.io/audacioustux/devcontainers/pulumi:1": {},
+		"ghcr.io/audacioustux/devcontainers/scala-toolchain:1": {},
+		"ghcr.io/audacioustux/devcontainers/taskfile:1": {},
+		"ghcr.io/audacioustux/devcontainers/tilt:1": {},
+		"ghcr.io/audacioustux/devcontainers/vegeta:1": {},
+		"ghcr.io/audacioustux/devcontainers/wasm-toolchain:1": {},
+		"ghcr.io/xfrancois/devcontainers-features/velero:1": {
+			"version": "latest"
+		},
+		"ghcr.io/nucleuscloud/devcontainer-features/ctlptl:0": {
+			"version": "latest"
+		},
+		"ghcr.io/nucleuscloud/devcontainer-features/helmfile:0": {
+			"version": "latest"
+		},
+		"ghcr.io/nucleuscloud/devcontainer-features/sqlc:1": {
+			"version": "latest"
+		},
+		"ghcr.io/joshspicer/more-features/cowsay:1": {},
+		"ghcr.io/marlonpassos-git/dev-container-features/vtex-cli:0": {},
+		"ghcr.io/paul-gilber/devcontainer-features/buildah-apt-get:1": {},
+		"ghcr.io/paul-gilber/devcontainer-features/butane-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/paul-gilber/devcontainer-features/eksctl-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/paul-gilber/devcontainer-features/jinja2-cli-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/paul-gilber/devcontainer-features/openshift-cli-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/paul-gilber/devcontainer-features/yamllint-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/brokenpip3/devcontainers-bats/bats-libs:0": {
+			"support": "latest",
+			"assert": "latest",
+			"detik": "latest",
+			"file": "latest"
+		},
+		"ghcr.io/prulloac/devcontainer-features/bun:1": {},
+		"ghcr.io/prulloac/devcontainer-features/chezmoi:1": {},
+		"ghcr.io/prulloac/devcontainer-features/commitizen:1": {},
+		"ghcr.io/prulloac/devcontainer-features/deno:1": {},
+		"ghcr.io/prulloac/devcontainer-features/gitlint:1": {},
+		"ghcr.io/prulloac/devcontainer-features/latex:1": {
+			"scheme": "full"
+		},
+		"ghcr.io/prulloac/devcontainer-features/lua:1": {},
+		"ghcr.io/prulloac/devcontainer-features/ollama:1": {},
+		"ghcr.io/prulloac/devcontainer-features/pre-commit:1": {},
+		"ghcr.io/lumenpink/devcontainer-features/bun:0": {},
+		"ghcr.io/lumenpink/devcontainer-features/wasm-pack:0": {},
+		"ghcr.io/radius-project/devcontainer-features/radcli:0": {
+			"version": "latest"
+		},
+		"ghcr.io/casl0/devcontainer-features/android-sdk:1": {
+			"installNdk": true,
+			"installCmake": true,
+			"cmakeVersion": "3.22.1"
+		},
+		"ghcr.io/casl0/devcontainer-features/depot_tools:1": {},
+		"ghcr.io/casl0/devcontainer-features/eksctl:1": {},
+		"ghcr.io/goldsam/dev-container-features/aws-sam-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/goldsam/dev-container-features/cue-lang:1": {
+			"version": "latest"
+		},
+		"ghcr.io/goldsam/dev-container-features/flux2:1": {
+			"version": "latest"
+		},
+		"ghcr.io/georgofenbeck/features/ammonite-homebrew:1": {},
+		"ghcr.io/georgofenbeck/features/ammonite-linuxbinary:1": {},
+		"ghcr.io/georgofenbeck/features/lazygit-homebrew:1": {},
+		"ghcr.io/georgofenbeck/features/lazygit-linuxbinary:1": {},
+		"ghcr.io/georgofenbeck/features/thefuck-homebrew:1": {},
+		"ghcr.io/georgofenbeck/features/thefuck-pipx:1": {},
+		"ghcr.io/nikobockerman/devcontainer-features/fish-persistent-data:2": {},
+		"ghcr.io/nikobockerman/devcontainer-features/poetry-persistent-cache:1": {},
+		"ghcr.io/nikobockerman/devcontainer-features/yarn-persistent-cache:1": {},
+		"ghcr.io/hspaans/devcontainer-features/ansible-lint:2": {
+			"version": "latest"
+		},
+		"ghcr.io/hspaans/devcontainer-features/django-upgrade:2": {
+			"version": "latest"
+		},
+		"ghcr.io/hspaans/devcontainer-features/pyadr:2": {
+			"version": "latest"
+		},
+		"ghcr.io/hspaans/devcontainer-features/pycqa:2": {
+			"doc8_version": "latest",
+			"docformatter_version": "latest",
+			"eradicate_version": "latest",
+			"isort_version": "latest",
+			"pydocstyle_version": "latest",
+			"pyflakes_version": "latest"
+		},
+		"ghcr.io/hspaans/devcontainer-features/pymarkdownlnt:2": {
+			"version": "latest"
+		},
+		"ghcr.io/hspaans/devcontainer-features/pytest:2": {
+			"version": "latest",
+			"plugins": "pytest-testinfra"
+		},
+		"ghcr.io/hspaans/devcontainer-features/pyupgrade:2": {
+			"version": "latest"
+		},
+		"ghcr.io/hspaans/devcontainer-features/rstcheck:2": {
+			"version": "latest"
+		},
+		"ghcr.io/hspaans/devcontainer-features/sshpass:1": {},
+		"ghcr.io/dlouwers/devcontainer-features/bob:1": {},
+		"ghcr.io/dlouwers/devcontainer-features/devbox:1": {},
+		"ghcr.io/kreemer/features/bicep-langserver:1": {
+			"version": "latest"
+		},
+		"ghcr.io/kreemer/features/chrometesting:1": {
+			"version": "Stable"
+		},
+		"ghcr.io/kreemer/features/devsense:1": {
+			"version": "latest"
+		},
+		"ghcr.io/kreemer/features/helix:1": {
+			"version": "latest"
+		},
+		"ghcr.io/kreemer/features/jdtls:1": {
+			"version": "latest"
+		},
+		"ghcr.io/kreemer/features/marksman:1": {
+			"version": "latest"
+		},
+		"ghcr.io/kreemer/features/stow:1": {
+			"version": "latest"
+		},
+		"ghcr.io/kreemer/features/yazi:1": {
+			"version": "latest"
+		},
+		"ghcr.io/veronoicc/devcontainer-features/frida-core-devkit:1": {},
+		"ghcr.io/veronoicc/devcontainer-features/frida-gum-devkit:1": {},
+		"ghcr.io/veronoicc/devcontainer-features/luajit-2.1.0-beta3:1": {},
+		"ghcr.io/va-h/devcontainers-features/difftastic:1": {
+			"version": "latest"
+		},
+		"ghcr.io/va-h/devcontainers-features/uv:1": {
+			"version": "latest"
+		},
+		"ghcr.io/bartventer/arch-devcontainer-features/aws-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/bartventer/arch-devcontainer-features/azure-cli:1": {},
+		"ghcr.io/bartventer/arch-devcontainer-features/common-utils:1": {
+			"installZsh": true,
+			"installOhMyZsh": true,
+			"installOhMyZshConfig": true,
+			"additionalPackages": "nodejs yarn npm make jq go-yq github-cli",
+			"username": "devcontainer"
+		},
+		"ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1": {
+			"azureDnsAutoDetection": true,
+			"installDockerBuildx": true,
+			"installDockerComposeSwitch": true,
+			"version": "latest"
+		},
+		"ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1": {
+			"installDockerBuildx": true,
+			"installDockerComposeSwitch": true,
+			"version": "latest"
+		},
+		"ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1": {},
+		"ghcr.io/bartventer/arch-devcontainer-features/go:1": {
+			"goVersion": "latest"
+		},
+		"ghcr.io/bartventer/arch-devcontainer-features/terraform:1": {
+			"enableShellCompletion": true,
+			"installTerragrunt": true,
+			"tflint": "latest"
+		},
+		"ghcr.io/waqqas/feature/bpmnlint:1": {
+			"version": "latest"
+		},
+		"ghcr.io/waqqas/feature/dmnlint:1": {
+			"version": "latest"
+		},
+		"ghcr.io/veryl-lang/devcontainer-features/verilator:1": {
+			"version": "latest"
+		},
+		"ghcr.io/veryl-lang/devcontainer-features/veryl:1": {
+			"version": "latest"
+		},
+		"ghcr.io/dusansimic/devcontainer-features/templ:0": {
+			"version": "latest"
+		},
+		"ghcr.io/duduribeiro/devcontainer-features/lunarvim:0": {},
+		"ghcr.io/duduribeiro/devcontainer-features/neovim:1": {
+			"version": "stable"
+		},
+		"ghcr.io/duduribeiro/devcontainer-features/tmux:1": {
+			"version": "latest"
+		},
+		"ghcr.io/skriptfabrik/devcontainer-features/gitlab-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/skriptfabrik/devcontainer-features/hcloud-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/skriptfabrik/devcontainer-features/infisical-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/skriptfabrik/devcontainer-features/mailpit:1": {
+			"version": "latest"
+		},
+		"ghcr.io/skriptfabrik/devcontainer-features/terraform-backend-git:1": {
+			"version": "latest"
+		},
+		"ghcr.io/skriptfabrik/devcontainer-features/yamlfix:1": {
+			"version": "latest"
+		},
+		"ghcr.io/m4tchl0ck/devcontainer-features/pact-cli:1": {
+			"pactCliVersion": "v2.4.2"
+		},
+		"ghcr.io/m4tchl0ck/devcontainer-features/powerlevel10k:1": {},
+		"ghcr.io/m4tchl0ck/devcontainer-features/structurizr-lite:1": {},
+		"ghcr.io/nils-geistmann/devcontainers-features/create-remote-user:0": {
+			"create": true,
+			"addToSudo": true,
+			"installSudo": true
+		},
+		"ghcr.io/nils-geistmann/devcontainers-features/exercism:0": {
+			"installCompletions": true,
+			"containerShell": "zsh"
+		},
+		"ghcr.io/nils-geistmann/devcontainers-features/zsh:0": {
+			"setLocale": true,
+			"theme": "robbyrussell"
+		},
+		"ghcr.io/partydrone/devcontainer/features/openfga-cli:0": {
+			"arch": "amd64"
+		},
+		"ghcr.io/rafaph/devcontainer-features/goose-cli:1": {},
+		"ghcr.io/weslyg/features/hashicorp-mirror:2": {
+			"products": "packer=1.2.3,terraform=4.2.1,vault=1.7.0"
+		},
+		"ghcr.io/gmkonan/fly-cli-feature/flyctl:1": {},
+		"ghcr.io/e-gineering/devcontainer-features/rye:1": {
+			"bashCompletion": true
+		},
+		"ghcr.io/chaoswars/synology-features/toolkit:1": {
+			"architecture": "6281"
+		},
+		"ghcr.io/tcaky/devcontainer-features/alpine-bindtools:0": {},
+		"ghcr.io/tcaky/devcontainer-features/alpine-powershell:0": {},
+		"ghcr.io/tcaky/devcontainer-features/alpine-tzdata:0": {},
+		"ghcr.io/larsnieuwenhuizen/features/jqyq:0": {},
+		"ghcr.io/larsnieuwenhuizen/features/neovim:0": {},
+		"ghcr.io/larsnieuwenhuizen/features/zellij:0": {},
+		"ghcr.io/enrico9034/devcontainer-features/openstack-cli:1": {},
+		"ghcr.io/nikiforovall/devcontainer-features/antlr4:1": {
+			"version": "4.13.0"
+		},
+		"ghcr.io/nikiforovall/devcontainer-features/dotnet-csharpier:1": {},
+		"ghcr.io/dirsigler/devcontainer-features/helm-docs:1": {},
+		"ghcr.io/sidecus/devcontainer-features/magicmirror:1": {
+			"pypi_mirror": "https://mirrors.bfsu.edu.cn/pypi/web/simple/",
+			"ubuntu_mirror": "mirrors.bfsu.edu.cn",
+			"apk_mirror": "mirrors.tuna.tsinghua.edu.cn",
+			"huggingface_mirror": "https://hf-mirror.com"
+		},
+		"ghcr.io/mathworks/devcontainer-features/matlab:0": {
+			"enableTelemetry": true,
+			"release": "R2026a"
+		},
+		"ghcr.io/jpawlowski/devcontainer-features/cascadia-code:1": {
+			"installFontconfig": true,
+			"installStaticTTF": true,
+			"version": "latest"
+		},
+		"ghcr.io/jpawlowski/devcontainer-features/cli-microsoft365:1": {
+			"commandCompletion": true,
+			"commandCompletionPS": true,
+			"version": "latest"
+		},
+		"ghcr.io/jpawlowski/devcontainer-features/codespaces-dotfiles:1": {
+			"installFallbackMethod": "symlink"
+		},
+		"ghcr.io/jpawlowski/devcontainer-features/pnp.powershell:1": {
+			"version": "latest"
+		},
+		"ghcr.io/jpawlowski/devcontainer-features/powershell-extended:2": {
+			"updateModulesHelp": true,
+			"installOhMyPosh": true,
+			"installOhMyPoshConfig": true,
+			"version": "latest"
+		},
+		"ghcr.io/gvatsal60/dev-container-features/pre-commit:1": {},
+		"ghcr.io/gvatsal60/dev-container-features/sonarlint:1": {},
+		"ghcr.io/gvatsal60/dev-container-features/uv:0": {},
+		"ghcr.io/git-saj/devcontainer-features/color:1": {
+			"favorite": "red"
+		},
+		"ghcr.io/git-saj/devcontainer-features/hello:1": {
+			"greeting": "hey"
+		},
+		"ghcr.io/code-fabrik/features/dokku-cli:1": {},
+		"ghcr.io/code-fabrik/features/gdal:1": {},
+		"ghcr.io/code-fabrik/features/lazydocker:1": {},
+		"ghcr.io/code-fabrik/features/osm2pgsql:1": {},
+		"ghcr.io/code-fabrik/features/pmtiles:1": {},
+		"ghcr.io/code-fabrik/features/tippecanoe:1": {},
+		"ghcr.io/juan-ayala/devcontainer-features/aem-lts:1": {},
+		"ghcr.io/juan-ayala/devcontainer-features/aem-repo-tool:1": {},
+		"ghcr.io/juan-ayala/devcontainer-features/aem-sdk:1": {},
+		"ghcr.io/juan-ayala/devcontainer-features/aem-universal-editor-service:1": {},
+		"ghcr.io/localstack/devcontainer-feature/localstack-cli:0": {
+			"version": ""
+		},
+		"ghcr.io/adaptavist/devcontainer-features/atlassian-forge:1": {
+			"version": "latest"
+		},
+		"ghcr.io/phil-bell/devcontainer-features/antigen:1": {},
+		"ghcr.io/ait-assistive-autonomous-systems/devcontainer_features/add-groups:0": {
+			"addGroups": "file://.devcontainers/host_groups"
+		},
+		"ghcr.io/haukex/devcontainer-features/perl:1": {
+			"local_lib": true
+		},
+		"ghcr.io/caesarovich/devcontainer-feature-crystal/crystal:1": {
+			"channel": "stable"
+		},
+		"ghcr.io/devcontainers-extra/features/act:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/act-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/actionlint:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/actions-runner:1": {
+			"version": "latest",
+			"dotnetVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/activemq-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/age:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/age-keygen:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/akamai-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/alertmanager:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/alp-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/amplify-cli:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/angular-cli:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ansible:2": {
+			"version": "latest",
+			"injections": "hcloud"
+		},
+		"ghcr.io/devcontainers-extra/features/ant-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/apko:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/apt-get-packages:1": {
+			"clean_ppas": true,
+			"preserve_apt_list": true,
+			"force_ppas_on_non_ubuntu": true,
+			"packages": "build-essential",
+			"ppas": "ppa:deadsnakes/ppa"
+		},
+		"ghcr.io/devcontainers-extra/features/apt-packages:1": {
+			"clean_ppas": true,
+			"preserve_apt_list": true,
+			"packages": "build-essential",
+			"ppas": "ppa:deadsnakes/ppa"
+		},
+		"ghcr.io/devcontainers-extra/features/archon:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/argo-cd:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/asciidoctorj-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/asdf-package:1": {
+			"plugin": "act"
+		},
+		"ghcr.io/devcontainers-extra/features/assemblyscript:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/atlantis:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/atmos:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/auditjs:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/autoenv:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/aws-cdk:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/aws-eb-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/aws-sso-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/aztfexport:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/azure-apiops:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ballerina-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "8",
+			"jdkDistro": "ms"
+		},
+		"ghcr.io/devcontainers-extra/features/bandit:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/bartib:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/bash-command:1": {
+			"command": "echo hi!"
+		},
+		"ghcr.io/devcontainers-extra/features/bazel-compile-commands:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/beehive:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/bikeshed:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/bin:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/black:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/blackbox-exporter:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/boilerplate:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/bomber:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/boundary-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/bower:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/bpipe-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "none",
+			"jdkDistro": "open"
+		},
+		"ghcr.io/devcontainers-extra/features/brownie:2": {
+			"version": "latest",
+			"pythonVersion": "os-provided"
+		},
+		"ghcr.io/devcontainers-extra/features/browserify:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/btm:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/btop-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/btrace-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/budibase-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/buku:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/bun:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/bun-package:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/caddy:1": {
+			"version": "latest",
+			"golangVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ccache-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/checkov:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/chezscheme-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/chisel:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/circleci-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/claude-code:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/clojure-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/cloud-nuke:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/cloudflare-wrangler:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/cloudflared:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/cloudflared-fips:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/cloudinary-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/cmake:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/codebuddy-code:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/codefresh-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/codename-goose-cli:1": {
+			"version": "stable"
+		},
+		"ghcr.io/devcontainers-extra/features/composer:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/concurnas-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "11"
+		},
+		"ghcr.io/devcontainers-extra/features/connor-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/consul-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/consul-exporter:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/cookiecutter:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/copier:7": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/corepack:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/cosign:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/coverage-py:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/crystal-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/cuba-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/curl-apt-get:1": {},
+		"ghcr.io/devcontainers-extra/features/curl-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/cve-bin-tool:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/cxf-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/cyclonedx-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/cyclonedx-python:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/cz-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/d:1": {
+			"compiler": "dmd"
+		},
+		"ghcr.io/devcontainers-extra/features/dart:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/dasel-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/dashlane-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/datadog-ci-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/datasette:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/dbt-coverage:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ddgr-apt-get:1": {},
+		"ghcr.io/devcontainers-extra/features/ddgr-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/deno:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/deno-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/devcontainers-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/digitalocean-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/direnv:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/direnv-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/dive:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/dnote:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/doctoolchain-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/dprint-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/driftctl:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/drone-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/dua:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/duf:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/dufs:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/eas-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/eget:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/elm-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ember-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/envoy:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/epinio:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/etcd:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/exa:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/exercism-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/expo-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/express-generator:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/eza:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/fd:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ffmpeg-apt-get:1": {},
+		"ghcr.io/devcontainers-extra/features/firebase-cli:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/fish-apt-get:1": {},
+		"ghcr.io/devcontainers-extra/features/fkill:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/flake8:2": {
+			"version": "latest",
+			"plugins": "flake8-black"
+		},
+		"ghcr.io/devcontainers-extra/features/flink-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/flit:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/former2-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/fossil-apt-get:1": {},
+		"ghcr.io/devcontainers-extra/features/fossil-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/fulcio:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/fzf:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/gaiden-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ganache:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/gcovr:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/gdbgui:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/gh-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/gh-release:1": {
+			"repo": "digitalocean/doctl"
+		},
+		"ghcr.io/devcontainers-extra/features/git-lfs:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/gitmux:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/gitomatic:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/gitsign:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/gitsign-credential-cache:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/gitty:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/glances:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/go-task:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/gofumpt:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/golangci-lint:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/graalvm-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/gradle-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/gradleprofiler-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/grails-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/graphite-cli:1": {
+			"version": "stable"
+		},
+		"ghcr.io/devcontainers-extra/features/graphite-exporter:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/groovy-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/groovyserv-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/grpcurl-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/grype:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/gulp-cli:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/hadoop-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/haskell:2": {
+			"installHLS": true,
+			"downgradeGhcToSupportHls": true,
+			"installStack": true,
+			"installStackGHCupHook": true,
+			"adjustBash": true,
+			"ghcVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/hatch:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/haxe-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/helmfile:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/heroku-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/homebrew-package:1": {
+			"package": "typescript"
+		},
+		"ghcr.io/devcontainers-extra/features/hotel:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/how2:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/http-server:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/http4k-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/hyperfine:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/immuadmin:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/immuadmin-fips:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/immuclient:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/immuclient-fips:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/immudb:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/immudb-fips:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/infisical:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/infracost:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/infrastructor-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/invoke:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ionic-cli:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/isort:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/jake:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/jbake-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/jbang-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/jenkinsx-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/jest:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/jfrog-cli:1": {},
+		"ghcr.io/devcontainers-extra/features/jfrog-cli-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/jfrog-cli-npm:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/jira-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/jmc-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/jmeter-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/joern-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/jreleaser-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/jrnl:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/jshint:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/jsii:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/jsii-diff:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/jsii-pacmak:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/jsii-rosetta:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/json-server:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/k2tf:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/k6:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/karaf-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "11"
+		},
+		"ghcr.io/devcontainers-extra/features/keepercommander:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ki-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/kind:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/kobweb-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/kops:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/kotlin-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/kscript-sdkman:2": {
+			"version": "latest",
+			"kotlinVersion": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/kubeclarity-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/kubectl-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/kubectx-kubens:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/kubie:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/kyverno-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/lastpass-cli-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/layrry-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/lean-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/lefthook-asdf:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/leiningen-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/lektor:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/lerna-npm:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/less:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/levant-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/lighthouse-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/linkerd2-cli-edge:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/linkerd2-cli-stable:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/linode-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/lite-server:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/live-server:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/localstack:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/localtunnel-npm:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/mackup:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/markdownlint-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/markdownlint-cli2:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/maven-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/meltano:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/memcached-exporter:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/micro:1": {},
+		"ghcr.io/devcontainers-extra/features/micronaut-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/mise:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/mitmproxy:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/mkcert:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/mkdocs:2": {
+			"version": "latest",
+			"plugins": "mkdocs-material pymdown-extensions mkdocstrings[crystal,python] mkdocs-monorepo-plugin mkdocs-pdf-export-plugin mkdocs-awesome-pages-plugin"
+		},
+		"ghcr.io/devcontainers-extra/features/mlocate-apt-get:1": {},
+		"ghcr.io/devcontainers-extra/features/mocha:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/mongodb-atlas-cli-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/mongosh-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/mosh-apt-get:1": {},
+		"ghcr.io/devcontainers-extra/features/mosh-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/mulefd-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/mvnd-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/mybatis-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/mypy:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/mysql-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/mysqld-exporter:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/n8n:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/namespace-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/nancy:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/navi:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ncdu:1": {},
+		"ghcr.io/devcontainers-extra/features/neko-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/neo4jmigrations-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/neofetch:1": {},
+		"ghcr.io/devcontainers-extra/features/neovim-apt-get:1": {},
+		"ghcr.io/devcontainers-extra/features/neovim-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/nestjs-cli:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/netdata:1": {},
+		"ghcr.io/devcontainers-extra/features/netlify-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/nim-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ninja-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/nmap-apt-get:1": {},
+		"ghcr.io/devcontainers-extra/features/nmap-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/nnn-apt-get:1": {},
+		"ghcr.io/devcontainers-extra/features/nnn-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/node-asdf:0": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/node-exporter:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/nomad-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/nox:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/npm-package:1": {
+			"package": "typescript"
+		},
+		"ghcr.io/devcontainers-extra/features/npm-packages:1": {
+			"packages": "eslint@9.20.1,nodemon,prettier@3.5.2"
+		},
+		"ghcr.io/devcontainers-extra/features/nx-npm:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ocaml-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ocaml-opam:1": {
+			"installPlatformTools": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/oclif:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/opa:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/opam-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/opencode:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/opengrep:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/opentofu:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ory-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ory-hydra:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ory-kratos:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ory-oathkeeper:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/outagedeck:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/packer-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/pandoc:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/pass-apt-get:1": {},
+		"ghcr.io/devcontainers-extra/features/pdm:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/peco-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/perl-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/pierrot-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/pipenv:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/pnpm:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/podman-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/poetry:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/pomchecker-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/poppler-utils-apt-get:1": {},
+		"ghcr.io/devcontainers-extra/features/powerbi-visuals-tools:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/powershell:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/pre-commit:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/prek:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/prettier:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/prisma:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/projen:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/prometheus:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/promlens:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/protoc:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/protoc-asdf:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/pulumi:1": {
+			"bashCompletion": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/pushgateway:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/pyinfra:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/pylint:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/pyoxidizer:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/pyscaffold:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/qrcode:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/quarkus-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/quasar-cli:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/raku-asdf:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/rclone:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/redis-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/rekor-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/renovate-cli:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ripgrep:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/rollup:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ruby-asdf:0": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ruff:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/salesforce-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/salesforce-sfdx:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/sanity-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/sap-piper:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/sbt-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/scala-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/scalacli-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/scancode-toolkit:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/schemacrawler-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/sentinel-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/serf-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/shellcheck:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/shfmt:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/shopify-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/sigstore-python:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/snyk-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/sops:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/spacectl:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/spark-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/spicedb:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/springboot-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/sqlfluff:1": {
+			"version": "latest",
+			"plugins": "sqlfluff-templater-dbt==2.3.5"
+		},
+		"ghcr.io/devcontainers-extra/features/squarespace-server:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/sshoogr-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/starship:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/starship-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/statsd-exporter:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/stew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/supabase-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/surge-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/sv2v:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/svu-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/syft:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/syntaqx-serve:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/tailscale:1": {},
+		"ghcr.io/devcontainers-extra/features/talosctl:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/taxi-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/tekton-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/tempo:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/temporal-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/terracognita:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/terraform-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/terraform-docs:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/terraform-ls-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/terraformer:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/terragrunt:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/terramate:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/terrascan:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/tfc-agent-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/tfenv-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/tflint:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/tfsec:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/tfswitch:1": {},
+		"ghcr.io/devcontainers-extra/features/tldr:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/tmate:1": {},
+		"ghcr.io/devcontainers-extra/features/tmux-apt-get:1": {},
+		"ghcr.io/devcontainers-extra/features/tmux-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/tomcat-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/tooljet-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/toolkit-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/tox:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/tridentctl-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/truffle:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ts-node:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/tsx:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/turborepo-npm:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/twine:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ty:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/typescript:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/typst:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/ufmt:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/upx:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/uv:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/uv-tool:1": {},
+		"ghcr.io/devcontainers-extra/features/vault-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/vercel-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/vercel-ncc:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/vercel-pkg:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/vercel-release:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/vercel-serve:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/vscode-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/vscode-server:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/vtop:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/vue-cli:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/vulture:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/w3m-apt-get:1": {},
+		"ghcr.io/devcontainers-extra/features/w3m-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/waypoint-asdf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/webi-packages:1": {},
+		"ghcr.io/devcontainers-extra/features/webtau-sdkman:2": {
+			"version": "latest",
+			"jdkVersion": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/wget-apt-get:1": {},
+		"ghcr.io/devcontainers-extra/features/wget-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/wireguard-apt-get:1": {},
+		"ghcr.io/devcontainers-extra/features/worktrunk:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/xmrig:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/xonsh:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/yamllint:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/yapf:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/youtube-dl:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/youtubeuploader:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/yt-dlp:2": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/zig:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
+			"plugins": "ssh-agent npm",
+			"omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions",
+			"username": "root"
+		},
+		"ghcr.io/bascodes/devcontainer-features/cf-warp-cli:1": {},
+		"ghcr.io/bascodes/devcontainer-features/debug-dump-env:1": {},
+		"ghcr.io/bascodes/devcontainer-features/desktop:0": {},
+		"ghcr.io/bascodes/devcontainer-features/desktop-fluxbox:0": {},
+		"ghcr.io/bascodes/devcontainer-features/desktop-init:0": {},
+		"ghcr.io/bascodes/devcontainer-features/desktop-novnc:0": {
+			"version": "1.2.0"
+		},
+		"ghcr.io/bascodes/devcontainer-features/desktop-xserver:0": {},
+		"ghcr.io/bascodes/devcontainer-features/kmod:1": {},
+		"ghcr.io/bascodes/devcontainer-features/pkgx:1": {},
+		"ghcr.io/bascodes/devcontainer-features/set-dbus-machine-id:1": {},
+		"ghcr.io/bascodes/devcontainer-features/shoreman:1": {},
+		"ghcr.io/bascodes/devcontainer-features/tailscale.com:1": {},
+		"ghcr.io/bascodes/devcontainer-features/usbutils:1": {},
+		"ghcr.io/bascodes/devcontainer-features/webinstall.dev:1": {},
+		"ghcr.io/rhiroe/features/ecspresso:1": {
+			"ecspressoVersion": "latest"
+		},
+		"ghcr.io/rhiroe/features/saml2aws:1": {
+			"saml2awsVersion": "latest"
+		},
+		"ghcr.io/aquaproj/devcontainer-features/aqua-installer:0": {},
+		"ghcr.io/martinaskestad/features/mingw:1": {},
+		"ghcr.io/martinaskestad/features/smlnj:1": {},
+		"ghcr.io/martinaskestad/features/vimsrc:1": {},
+		"ghcr.io/loag/slang-feature/slang:0": {
+			"version": "2024.17"
+		},
+		"ghcr.io/zetta/devcontainer-features/scalr-cli:1": {
+			"version": "0.16.2"
+		},
+		"ghcr.io/zetta/devcontainer-features/venom:1": {
+			"version": "1.2.0"
+		},
+		"ghcr.io/connershoop/devcontainer-feature-ubuntugis/ubuntugis:1": {},
+		"ghcr.io/forwardsoftware/devcontainer-features/go-mod-cache:1": {},
+		"ghcr.io/chaoswars/vscode-features/llvm:1": {
+			"llvm-version": "18"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/add-script:1": {},
+		"ghcr.io/devcontainer-community/devcontainer-features/alexpasmantier-television:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/ankitpokhrel-jira-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/apt-build-essential:1": {},
+		"ghcr.io/devcontainer-community/devcontainer-features/asdf-vm.com:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/astral.sh-uv:1": {
+			"shellautocompletion": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/atuin.sh:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/avivsinai-bitbucket-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/aws-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/basecamp-fizzy-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/bat:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/biomejs.dev:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/btop:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/bun.sh:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/ca-certificates:1": {},
+		"ghcr.io/devcontainer-community/devcontainer-features/ccache.dev:1": {},
+		"ghcr.io/devcontainer-community/devcontainer-features/charmbracelet-gum:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/chezmoi.io:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/clang-format:1": {},
+		"ghcr.io/devcontainer-community/devcontainer-features/clang-tidy:1": {},
+		"ghcr.io/devcontainer-community/devcontainer-features/cloudflare.com-warp-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/cmake.org:1": {},
+		"ghcr.io/devcontainer-community/devcontainer-features/coleam00-Archon:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/collection-c-cpp:1": {},
+		"ghcr.io/devcontainer-community/devcontainer-features/critique.work:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/danmar-cppcheck:1": {},
+		"ghcr.io/devcontainer-community/devcontainer-features/delta:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/deno.com:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/devenv.sh:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/diffity.com:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/direnv.net:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/distcc.org:1": {},
+		"ghcr.io/devcontainer-community/devcontainer-features/dolthub.com:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/dolthub.com-doltgres:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/dotenv.org:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/dozzle.dev:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/fathyb-carbonyl:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/fd:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/feature-installer:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/fzf:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/getdnote.com:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/gitagent.sh:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/github.com-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/helix-editor.com:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/hermes-agent.nousresearch.com:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/icholy-ttygif:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/jj-vcs.dev:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/jnsahaj-lumen:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/joelhooks-agent-secrets:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/jonas-tig:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/jq:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/k9scli.io:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/keybase.io:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/lazygit:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/lnav.org:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/memvid.com:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/mosh.org:1": {},
+		"ghcr.io/devcontainer-community/devcontainer-features/neovim.io:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/ninja-build.org:1": {},
+		"ghcr.io/devcontainer-community/devcontainer-features/nixos.org:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/nvidia.com-cuda:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/onecli.sh-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/opencode.ai:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/pi.dev:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/pkgx.sh:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/pulumi.com:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/rclone.org:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/restic.net:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/ripgrep:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/run-script:1": {},
+		"ghcr.io/devcontainer-community/devcontainer-features/schpet-linear-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/smallstep.com:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/socket.dev-sfw-free:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/sourceware.org-gdb:1": {},
+		"ghcr.io/devcontainer-community/devcontainer-features/sshd:1": {
+			"port": "2222"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/starship.rs:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/steveyegge-beads:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/swc.rs:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/sxyazi-yazi:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/tailscale.com:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/taskwarrior.org:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/tree-sitter:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/turso.tech:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/valgrind.org:1": {},
+		"ghcr.io/devcontainer-community/devcontainer-features/vcpkg.io:1": {},
+		"ghcr.io/devcontainer-community/devcontainer-features/webinstall.dev:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/yakitrak-notesmd-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/yoctoproject.org:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/yoctoproject.org-bitbake:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/yq:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/zellij.dev:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainer-community/devcontainer-features/zyedidia-eget:1": {
+			"version": "latest"
+		},
+		"ghcr.io/braun-daniel/devcontainer-features/asciidoc:1": {},
+		"ghcr.io/braun-daniel/devcontainer-features/fzf:1": {},
+		"ghcr.io/braun-daniel/devcontainer-features/spaceship:1": {},
+		"ghcr.io/szkiba/devcontainer-features/bats:1": {
+			"version": "latest"
+		},
+		"ghcr.io/szkiba/devcontainer-features/cdo:1": {
+			"version": "latest"
+		},
+		"ghcr.io/szkiba/devcontainer-features/gosec:1": {
+			"version": "latest"
+		},
+		"ghcr.io/szkiba/devcontainer-features/govulncheck:1": {
+			"version": "latest"
+		},
+		"ghcr.io/szkiba/devcontainer-features/mdcode:1": {
+			"version": "latest"
+		},
+		"ghcr.io/thediveo/devcontainer-features/bpftool:0": {},
+		"ghcr.io/thediveo/devcontainer-features/cni-plugins:0": {},
+		"ghcr.io/thediveo/devcontainer-features/docsify:1": {
+			"port": "3300",
+			"docs-path": "docs",
+			"reload-delay": "2000",
+			"reload-debounce": "5000"
+		},
+		"ghcr.io/thediveo/devcontainer-features/gcx:0": {},
+		"ghcr.io/thediveo/devcontainer-features/go-ebpf:1": {},
+		"ghcr.io/thediveo/devcontainer-features/go-mod-upgrade:1": {},
+		"ghcr.io/thediveo/devcontainer-features/gocover:1": {
+			"race": true,
+			"verbose": true,
+			"run": "^Test"
+		},
+		"ghcr.io/thediveo/devcontainer-features/goreportcard:1": {},
+		"ghcr.io/thediveo/devcontainer-features/lazygit:0": {},
+		"ghcr.io/thediveo/devcontainer-features/local-pkgsite:1": {
+			"port": "6060",
+			"reload-delay": "2000",
+			"reload-debounce": "5000"
+		},
+		"ghcr.io/thediveo/devcontainer-features/nerdctl:0": {
+			"cni": true
+		},
+		"ghcr.io/thediveo/devcontainer-features/pin-github-action:0": {},
+		"ghcr.io/thediveo/devcontainer-features/pinact:0": {},
+		"ghcr.io/thediveo/devcontainer-features/pull-through-cache-registry:1": {
+			"port": "5000"
+		},
+		"ghcr.io/thediveo/devcontainer-features/wal-wahl:0": {},
+		"ghcr.io/dotnet/aspire-devcontainer-feature/dotnetaspire:1": {
+			"version": "latest daily"
+		},
+		"ghcr.io/roul/devcontainer-features/bitwarden-cli:1": {},
+		"ghcr.io/roul/devcontainer-features/bitwarden-secrets-manager:1": {},
+		"ghcr.io/roul/devcontainer-features/kamal:1": {},
+		"ghcr.io/roul/devcontainer-features/mise:1": {},
+		"ghcr.io/roul/devcontainer-features/mise-bun:1": {},
+		"ghcr.io/roul/devcontainer-features/mise-golang:1": {},
+		"ghcr.io/roul/devcontainer-features/mise-java:1": {},
+		"ghcr.io/roul/devcontainer-features/mise-node:1": {},
+		"ghcr.io/roul/devcontainer-features/mise-python:1": {},
+		"ghcr.io/roul/devcontainer-features/mise-ruby:1": {},
+		"ghcr.io/roul/devcontainer-features/mise-rust:1": {},
+		"ghcr.io/roul/devcontainer-features/vault:1": {},
+		"ghcr.io/itsalljustdata/devcontainers-custom-features/python-virtualenv:1": {},
+		"ghcr.io/irfansofyana/devcontainer-features/kcat-apt:1": {},
+		"ghcr.io/irfansofyana/devcontainer-features/lazydocker-binary-release:1": {},
+		"ghcr.io/grafana/devcontainer-features/k6:1": {
+			"version": "latest"
+		},
+		"ghcr.io/grafana/devcontainer-features/xk6:1": {
+			"version": "latest"
+		},
+		"ghcr.io/httpdss/devcontainers-features/struct:1": {},
+		"ghcr.io/coder/devcontainer-features/code-server:2": {
+			"auth": "password"
+		},
+		"ghcr.io/atty303/devcontainer-features/mise:1": {
+			"trust": true,
+			"install": true,
+			"activate": "none"
+		},
+		"ghcr.io/muhmdraouf/devcontainers-features/alpine-apk:0": {
+			"upgradePackages": true
+		},
+		"ghcr.io/jajera/features/ag:1": {},
+		"ghcr.io/jajera/features/agentcore-cli:1": {
+			"packageVersion": ""
+		},
+		"ghcr.io/jajera/features/amazon-q-cli:1": {},
+		"ghcr.io/jajera/features/aws-sam-cli:1": {},
+		"ghcr.io/jajera/features/gcloud-cli:1": {},
+		"ghcr.io/jajera/features/zip:1": {},
+		"ghcr.io/mrsimonemms/devcontainers/air:1": {
+			"version": "latest"
+		},
+		"ghcr.io/mrsimonemms/devcontainers/buf:1": {
+			"installProtocGenBufBreaking": true,
+			"installProtocGenBufLint": true,
+			"version": "latest"
+		},
+		"ghcr.io/mrsimonemms/devcontainers/butane:1": {
+			"version": "latest"
+		},
+		"ghcr.io/mrsimonemms/devcontainers/cobra-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/mrsimonemms/devcontainers/diff-so-fancy:1": {
+			"version": "latest"
+		},
+		"ghcr.io/mrsimonemms/devcontainers/dingo:1": {
+			"version": "latest"
+		},
+		"ghcr.io/mrsimonemms/devcontainers/floci:1": {
+			"version": "latest"
+		},
+		"ghcr.io/mrsimonemms/devcontainers/tcld:1": {
+			"version": "latest"
+		},
+		"ghcr.io/mrsimonemms/devcontainers/zigflow:1": {
+			"version": "latest"
+		},
+		"ghcr.io/ryanlua/features/rojo:0": {
+			"version": "latest"
+		},
+		"ghcr.io/daniellindemann/dev-container-features/dotnet-usersecrets-persistence:0": {},
+		"ghcr.io/tobiaschc/devcontainer-features/starship:1": {
+			"defaultConfig": true,
+			"configFile": "tobias"
+		},
+		"ghcr.io/joebowbeer/devcontainers-features/arkade-get:1": {},
+		"ghcr.io/joebowbeer/devcontainers-features/crossplane:1": {
+			"version": "current",
+			"channel": "stable"
+		},
+		"ghcr.io/pirpedro/features/antidote:1": {
+			"setAsDefaultShell": true
+		},
+		"ghcr.io/pirpedro/features/chezmoi:1": {
+			"apply": true,
+			"useLoginShell": true
+		},
+		"ghcr.io/pirpedro/features/dev-gadgets:1": {},
+		"ghcr.io/pirpedro/features/just:1": {},
+		"ghcr.io/bullmastiffo/devcontainers-features/azurelinux-docker-outside-of-docker:1": {
+			"installDockerBuildx": true,
+			"installDockerCompose": true
+		},
+		"ghcr.io/takahashinguyen/devcontainer-features/mailpit-homebrew:1": {
+			"version": "latest",
+			"options": ""
+		},
+		"ghcr.io/takahashinguyen/devcontainer-features/minio-client-homebrew:1": {
+			"version": "latest"
+		},
+		"ghcr.io/takahashinguyen/devcontainer-features/minio-homebrew:2": {
+			"version": "latest"
+		},
+		"ghcr.io/olivierlemasle/devcontainers-features/jsonnet:1": {
+			"version": "latest",
+			"jsonnetBundlerVersion": "latest"
+		},
+		"ghcr.io/olivierlemasle/devcontainers-features/tauri:1": {
+			"version": "latest"
+		},
+		"ghcr.io/navinkrishnan/devcontainer-features-btp/btp-cap-dev-stack:1": {},
+		"ghcr.io/navinkrishnan/devcontainer-features-btp/cds-dk:1": {},
+		"ghcr.io/navinkrishnan/devcontainer-features-btp/cf:1": {},
+		"ghcr.io/navinkrishnan/devcontainer-features-btp/helm:1": {},
+		"ghcr.io/navinkrishnan/devcontainer-features-btp/mbt:1": {},
+		"ghcr.io/navinkrishnan/devcontainer-features-btp/pack:1": {},
+		"ghcr.io/ksachdeva/devcontainer-features/nats-server:1": {
+			"version": "latest"
+		},
+		"ghcr.io/ksachdeva/devcontainer-features/nats-top:1": {
+			"version": "latest"
+		},
+		"ghcr.io/ksachdeva/devcontainer-features/natscli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/ksachdeva/devcontainer-features/presenterm:1": {
+			"version": "latest"
+		},
+		"ghcr.io/siri404/devcontainer-ai-features/claude-code:1": {
+			"telemetry": true
+		},
+		"ghcr.io/siri404/devcontainer-ai-features/gcloud:1": {
+			"telemetry": true
+		},
+		"ghcr.io/siri404/devcontainer-ai-features/gemini-cli:1": {
+			"telemetry": true
+		},
+		"ghcr.io/siri404/devcontainer-ai-features/mcp-inspector:1": {
+			"telemetry": true
+		},
+		"ghcr.io/siri404/devcontainer-ai-features/vercel-cli:1": {
+			"telemetry": true
+		},
+		"ghcr.io/helpers4/devcontainer/angular-dev:1": {
+			"installCli": true
+		},
+		"ghcr.io/helpers4/devcontainer/auto-header:1": {
+			"headerType": "simple"
+		},
+		"ghcr.io/helpers4/devcontainer/bitwarden-secrets-manager:1": {},
+		"ghcr.io/helpers4/devcontainer/claude-dev:1": {},
+		"ghcr.io/helpers4/devcontainer/cline-dev:1": {},
+		"ghcr.io/helpers4/devcontainer/copilot-dev:1": {
+			"installCli": true
+		},
+		"ghcr.io/helpers4/devcontainer/dotfiles-sync:1": {},
+		"ghcr.io/helpers4/devcontainer/essential-dev:1": {},
+		"ghcr.io/helpers4/devcontainer/git-absorb:1": {},
+		"ghcr.io/helpers4/devcontainer/github-dev:1": {},
+		"ghcr.io/helpers4/devcontainer/helpers4-common:1": {},
+		"ghcr.io/helpers4/devcontainer/mistral-dev:1": {},
+		"ghcr.io/helpers4/devcontainer/nub:1": {
+			"installGlobally": true
+		},
+		"ghcr.io/helpers4/devcontainer/org-workspace:1": {
+			"generateCodeWorkspace": true
+		},
+		"ghcr.io/helpers4/devcontainer/package-auto-install:1": {
+			"skipIfNodeModulesExists": true,
+			"autoDiscover": true,
+			"command": "auto",
+			"packageManager": "auto"
+		},
+		"ghcr.io/helpers4/devcontainer/peon-ping:1": {},
+		"ghcr.io/helpers4/devcontainer/playwright-dev:1": {
+			"installDeps": true,
+			"browsers": "chromium"
+		},
+		"ghcr.io/helpers4/devcontainer/pnpm-store:1": {},
+		"ghcr.io/helpers4/devcontainer/shell-history-per-project:1": {
+			"targetShell": "auto"
+		},
+		"ghcr.io/helpers4/devcontainer/typescript-dev:1": {},
+		"ghcr.io/helpers4/devcontainer/vite-plus:1": {
+			"installVitePlus": true,
+			"installGlobally": true
+		},
+		"ghcr.io/yassinedoghri/devcontainers/php-extensions-installer:1": {
+			"extensions": "amqp"
+		},
+		"ghcr.io/42atomys/devcontainers-features/dragonfly:1": {
+			"version": "latest"
+		},
+		"ghcr.io/42atomys/devcontainers-features/meilisearch:1": {
+			"version": "latest"
+		},
+		"ghcr.io/42atomys/devcontainers-features/minio-server:1": {
+			"extraArguments": "--console-address ':9001'"
+		},
+		"ghcr.io/42atomys/devcontainers-features/redis-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/marcosbolanos/devcontainer-features/neovim-prebuilt:1": {},
+		"ghcr.io/slaytanic/devcontainer/color:1": {
+			"favorite": "red"
+		},
+		"ghcr.io/slaytanic/devcontainer/hello:1": {
+			"greeting": "hey"
+		},
+		"ghcr.io/slaytanic/devcontainer/watchman:1": {},
+		"ghcr.io/rabdulwahhab/devcontainer-features/elixir-asdf:1": {
+			"version": "latest"
+		},
+		"ghcr.io/rabdulwahhab/devcontainer-features/erlang-asdf:1": {
+			"version": "latest",
+			"kerlConfigureOptions": "--disable-debug --without-javac"
+		},
+		"ghcr.io/rails/devcontainer/features/activestorage:1": {
+			"variantProcessor": "vips"
+		},
+		"ghcr.io/rails/devcontainer/features/bun:1": {},
+		"ghcr.io/rails/devcontainer/features/bundler-cache:1": {},
+		"ghcr.io/rails/devcontainer/features/mysql-client:1": {},
+		"ghcr.io/rails/devcontainer/features/postgres-client:1": {},
+		"ghcr.io/rails/devcontainer/features/ruby:2": {
+			"versionManager": "mise"
+		},
+		"ghcr.io/rails/devcontainer/features/sqlite3:1": {},
+		"ghcr.io/nlstn/devcontainer-features/go-air:1": {},
+		"ghcr.io/nlstn/devcontainer-features/psql:1": {},
+		"ghcr.io/xingxinhe/devcontainer-features/realsense:1": {},
+		"ghcr.io/xingxinhe/devcontainer-features/robotpkg:1": {},
+		"ghcr.io/xingxinhe/devcontainer-features/zivid:1": {
+			"ubuntuVersion": "24"
+		},
+		"ghcr.io/proxayfox/devcontainer-features/aikido-precommit:1": {
+			"setupGlobalHooks": true
+		},
+		"ghcr.io/proxayfox/devcontainer-features/clickhouse-local:1": {
+			"installMethod": "quick"
+		},
+		"ghcr.io/proxayfox/devcontainer-features/lazydocker:1": {},
+		"ghcr.io/kingbain/devcontainer-features-databricks/databricks-cli:0": {},
+		"ghcr.io/devcontainer-config/features/dot-config:5": {},
+		"ghcr.io/devcontainer-config/features/features:0": {},
+		"ghcr.io/devcontainer-config/features/unset-git-credential-helper:0": {},
+		"ghcr.io/devcontainer-config/features/user-init:4": {},
+		"ghcr.io/Evit15/devcontainer-features/adb-fastboot:1": {},
+		"ghcr.io/roboslone/go-framework/fexec:1": {
+			"version": "latest"
+		},
+		"ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
+			"installForBash": true,
+			"installForZsh": true,
+			"installForPwsh": true
+		},
+		"ghcr.io/w3cj/devcontainer-features/firewall:0": {
+			"dockerNetworks": true
+		},
+		"ghcr.io/marblejenka/devcontainer-feature/gemini-cli:0": {
+			"version": "latest"
+		},
+		"ghcr.io/marblejenka/devcontainer-feature/tlaplus:0": {
+			"setupShorthand": true,
+			"installTlaplus": true,
+			"installCommunityModules": true,
+			"installTlapm": true,
+			"installApalache": true,
+			"installTLAUC": true,
+			"toolsPath": "/tlaplus",
+			"versionForTlaplus": "nightly"
+		},
+		"ghcr.io/ttyrho/devcontainer-features/fpm:1": {},
+		"ghcr.io/ttyrho/devcontainer-features/gcc:1": {},
+		"ghcr.io/ttyrho/devcontainer-features/gfortran:1": {},
+		"ghcr.io/dopplerhq/devcontainer-features/doppler-cli:1": {},
+		"ghcr.io/dopplerhq/devcontainer-features/volume-permissions:1": {
+			"basePath": "${containerWorkspaceFolder}",
+			"paths": "${containerWorkspaceFolder}/.pnpm-store,${containerWorkspaceFolder}/node_modules"
+		},
+		"ghcr.io/miguelrodo/devcontainerfeatures/apptainer:1": {
+			"timezone": "UTC"
+		},
+		"ghcr.io/miguelrodo/devcontainerfeatures/build-info:1": {},
+		"ghcr.io/miguelrodo/devcontainerfeatures/cmdstan:1": {
+			"installRPackage": true,
+			"installPythonPackage": true,
+			"version": "2.36.0"
+		},
+		"ghcr.io/miguelrodo/devcontainerfeatures/fit-sne:1": {
+			"version": "latest"
+		},
+		"ghcr.io/miguelrodo/devcontainerfeatures/github-tokens:1": {
+			"elevateGitHubToken": true
+		},
+		"ghcr.io/miguelrodo/devcontainerfeatures/mermaid:1": {},
+		"ghcr.io/miguelrodo/devcontainerfeatures/renv-cache:1": {
+			"restore": true,
+			"setRLibPaths": true,
+			"overrideTokensAtInstall": true,
+			"installSystemRequirements": true,
+			"createUnifiedLockfile": "auto"
+		},
+		"ghcr.io/miguelrodo/devcontainerfeatures/utils:1": {
+			"installRepos": true,
+			"installSetupmjr": true
+		},
+		"ghcr.io/esimkowitz/devcontainer-features/claude-code-persistence:1": {
+			"persistClaudeDir": true
+		},
+		"ghcr.io/esimkowitz/devcontainer-features/direnv:1": {
+			"version": "latest"
+		},
+		"ghcr.io/esimkowitz/devcontainer-features/fish-starship:1": {},
+		"ghcr.io/esimkowitz/devcontainer-features/ssh-signing:1": {
+			"gitAliases": true
+		},
+		"ghcr.io/iyaki/devcontainer-features/enchiridion:2": {},
+		"ghcr.io/iyaki/devcontainer-features/lefthook:2": {},
+		"ghcr.io/iyaki/devcontainer-features/oh-my-pi:1": {},
+		"ghcr.io/iyaki/devcontainer-features/phpantom:1": {},
+		"ghcr.io/iyaki/devcontainer-features/pie:1": {},
+		"ghcr.io/iyaki/devcontainer-features/pie-extensions:2": {
+			"extensions": "xdebug/xdebug"
+		},
+		"ghcr.io/iyaki/devcontainer-features/ralph:1": {},
+		"ghcr.io/riccardobravin/devcontainer-features/zensical:0": {
+			"version": "latest"
+		},
+		"ghcr.io/mike-fi/devcontainer-features/databricks-cli:1": {
+			"version": "v1.0.0"
+		},
+		"ghcr.io/wcgomes/devcontainer-features/agency-agents:0": {
+			"autoupdate": true
+		},
+		"ghcr.io/wcgomes/devcontainer-features/agents-workspace:0": {
+			"includeAgency": true,
+			"autoupdate": true
+		},
+		"ghcr.io/wcgomes/devcontainer-features/opencode:0": {
+			"autoupdate": true
+		},
+		"ghcr.io/sliekens/devcontainer-features/ansible:1": {},
+		"ghcr.io/sliekens/devcontainer-features/ansible-core:1": {},
+		"ghcr.io/sliekens/devcontainer-features/ansible-lint:1": {},
+		"ghcr.io/sliekens/devcontainer-features/aspire-cli:1": {
+			"quality": "release"
+		},
+		"ghcr.io/sliekens/devcontainer-features/bitwarden-agent-access:1": {},
+		"ghcr.io/sliekens/devcontainer-features/bitwarden-cli:1": {},
+		"ghcr.io/sliekens/devcontainer-features/bitwarden-secrets-manager:1": {},
+		"ghcr.io/sliekens/devcontainer-features/claude:1": {},
+		"ghcr.io/sliekens/devcontainer-features/codex:1": {},
+		"ghcr.io/sliekens/devcontainer-features/copilot:1": {},
+		"ghcr.io/sliekens/devcontainer-features/github-cli:1": {},
+		"ghcr.io/sliekens/devcontainer-features/grok-build:1": {
+			"channel": "stable"
+		},
+		"ghcr.io/sliekens/devcontainer-features/mistral-vibe:1": {},
+		"ghcr.io/sliekens/devcontainer-features/mono:1": {},
+		"ghcr.io/sliekens/devcontainer-features/omp:1": {},
+		"ghcr.io/sliekens/devcontainer-features/opencode:1": {},
+		"ghcr.io/sliekens/devcontainer-features/pi:1": {},
+		"ghcr.io/sliekens/devcontainer-features/rename-user:1": {},
+		"ghcr.io/sliekens/devcontainer-features/tea:1": {},
+		"ghcr.io/sliekens/devcontainer-features/worktrunk:1": {
+			"tabCompletions": true
+		},
+		"ghcr.io/postfinance/devcontainer-features/apm:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/browsers:1": {
+			"useChromeForTesting": true,
+			"firefoxVersionResolve": true,
+			"chromeVersion": "none"
+		},
+		"ghcr.io/postfinance/devcontainer-features/build-essential:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/claude-code:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/cypress-deps:1": {},
+		"ghcr.io/postfinance/devcontainer-features/docker-in:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/docker-out:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/dotnet:1": {
+			"version": "10.0",
+			"additionalVersions": "8.0,9.0"
+		},
+		"ghcr.io/postfinance/devcontainer-features/eclipse-deps:1": {},
+		"ghcr.io/postfinance/devcontainer-features/git-lfs:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/github-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/github-copilot-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/gitlab-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/go:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/gonovate:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/goreleaser:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/instant-client:2": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/jfrog-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/kubectl:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/locale:1": {
+			"locale": "de_CH"
+		},
+		"ghcr.io/postfinance/devcontainer-features/make:1": {},
+		"ghcr.io/postfinance/devcontainer-features/mingw:1": {},
+		"ghcr.io/postfinance/devcontainer-features/nginx:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/node:1": {
+			"version": "lts"
+		},
+		"ghcr.io/postfinance/devcontainer-features/npm-packages:1": {
+			"packages": "@devcontainers/cli,which@3.0.1"
+		},
+		"ghcr.io/postfinance/devcontainer-features/nvidia-cuda:1": {
+			"installLibraries": true,
+			"installDevLibraries": true,
+			"installCompiler": true,
+			"installTools": true,
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/opencode:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/playwright-deps:2": {
+			"installChromiumDeps": true,
+			"installFirefoxDeps": true,
+			"installWebkitDeps": true
+		},
+		"ghcr.io/postfinance/devcontainer-features/python:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/rust:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/sonar-scanner-cli:1": {
+			"includeJre": true,
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/system-packages:1": {
+			"packages": "curl,git,htop"
+		},
+		"ghcr.io/postfinance/devcontainer-features/terraform:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/timezone:1": {
+			"timezone": "Europe/Zurich"
+		},
+		"ghcr.io/postfinance/devcontainer-features/vault-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/postfinance/devcontainer-features/zig:1": {
+			"version": "latest"
+		},
+		"ghcr.io/nicoviii/devcontainer-features/roc:0": {
+			"version": "latest"
+		},
+		"ghcr.io/althack/devcontainers/linux-pulseaudio-forwarding:0": {},
+		"ghcr.io/althack/devcontainers/linux-x11-forwarding:0": {
+			"softwareGL": true
+		},
+		"ghcr.io/althack/devcontainers/ros2:0": {
+			"distro": "auto"
+		},
+		"ghcr.io/soup-bowl/features/firefox-set:0": {},
+		"ghcr.io/rosstaco/devcontainer-features/atlassian-jira-confluence-cli:1": {
+			"configureBrowser": true,
+			"version": "latest"
+		},
+		"ghcr.io/rosstaco/devcontainer-features/copilot-persistence:1": {},
+		"ghcr.io/rosstaco/devcontainer-features/gitlab-ci-local:1": {
+			"version": "latest"
+		},
+		"ghcr.io/rosstaco/devcontainer-features/microsoft-security-devops-cli:1": {},
+		"ghcr.io/rosstaco/devcontainer-features/ohmyposh:1": {},
+		"ghcr.io/rosstaco/devcontainer-features/package-source-overrides:1": {
+			"strictSsl": true,
+			"scope": "system"
+		},
+		"ghcr.io/rosstaco/devcontainer-features/prompty-dumpty:1": {},
+		"ghcr.io/nkdui/devcontainer-features/conan:1": {},
+		"ghcr.io/mrhornsby/trunk-devcontainer-feature/trunk:1": {
+			"installWasmTarget": true,
+			"version": "latest"
+		},
+		"ghcr.io/cdsolinfo/devcontainer-features/ksm:1": {
+			"version": "latest"
+		},
+		"ghcr.io/nkaaf/devcontainer-features/azure-functions:0": {},
+		"ghcr.io/nkaaf/devcontainer-features/latex-texlive:0": {
+			"year": "2020"
+		},
+		"ghcr.io/nkaaf/devcontainer-features/package-manager:2": {},
+		"ghcr.io/nkaaf/devcontainer-features/package-manager-apt:0": {
+			"manager": "apt"
+		},
+		"ghcr.io/nkaaf/devcontainer-features/package-manager-tlmgr:0": {},
+		"ghcr.io/rodribus/devcontainer-features/pi-coding-agent:0": {
+			"version": "latest"
+		},
+		"ghcr.io/aqua/devcontainer-antigravity-cli/antigravity-cli:1": {},
+		"ghcr.io/cjcrobin/devcontainer-features/claudecode:1": {},
+		"ghcr.io/cjcrobin/devcontainer-features/codexcli:1": {},
+		"ghcr.io/cjcrobin/devcontainer-features/playwright-cli:1": {
+			"installSkills": true
+		},
+		"ghcr.io/cjcrobin/devcontainer-features/qodercli:1": {
+			"edition": "global"
+		},
+		"ghcr.io/aqua/devcontainer-gcloud/gcloud:1": {},
+		"ghcr.io/kuju63/devcontainer-features/betterleaks:1": {
+			"version": "latest"
+		},
+		"ghcr.io/srzstephen/devcontainer-features/act:1": {
+			"version": "latest"
+		},
+		"ghcr.io/srzstephen/devcontainer-features/agentcore:1": {},
+		"ghcr.io/srzstephen/devcontainer-features/aws-sam-cli:1": {},
+		"ghcr.io/srzstephen/devcontainer-features/bash-language-server:1": {
+			"installShellcheck": true,
+			"installShellfmt": true,
+			"version": "latest"
+		},
+		"ghcr.io/srzstephen/devcontainer-features/claude-code:1": {
+			"planMode": true
+		},
+		"ghcr.io/srzstephen/devcontainer-features/gitlab-ci-local:1": {
+			"version": "latest"
+		},
+		"ghcr.io/srzstephen/devcontainer-features/gitlab-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/srzstephen/devcontainer-features/just:1": {
+			"version": "latest"
+		},
+		"ghcr.io/srzstephen/devcontainer-features/kiro-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/srzstephen/devcontainer-features/nvidia-container-toolkit:1": {
+			"version": "latest"
+		},
+		"ghcr.io/srzstephen/devcontainer-features/prek:1": {
+			"version": "latest"
+		},
+		"ghcr.io/xavierbeheydt/devcontainer-extras/lazyvim:0": {},
+		"ghcr.io/sjp/tectonic-feature/tectonic:1": {},
+		"ghcr.io/dnegstad/devcontainer-dev-certs/devcontainer-dev-certs:1": {
+			"pruneMissingCertDirs": true,
+			"generateDotNetCert": true,
+			"syncUserCertificates": true
+		},
+		"ghcr.io/jrussellsmyth/devcontainer-features/crush:1": {},
+		"ghcr.io/jrussellsmyth/devcontainer-features/openspec:1": {},
+		"ghcr.io/jrussellsmyth/devcontainer-features/yarn-apt-publickey:1": {},
+		"ghcr.io/nolanjx/devcontainer-features/claude-code:1": {
+			"version": "latest"
+		},
+		"ghcr.io/nolanjx/devcontainer-features/codex:1": {
+			"version": "latest"
+		},
+		"ghcr.io/nolanjx/devcontainer-features/cursor:1": {},
+		"ghcr.io/nolanjx/devcontainer-features/dsh:1": {
+			"version": "latest"
+		},
+		"ghcr.io/nolanjx/devcontainer-features/mattpocock-skills:1": {},
+		"ghcr.io/nolanjx/devcontainer-features/pi-coding-agent:1": {
+			"version": "latest"
+		},
+		"registry.gitlab.com/pravorskyi/devcontainer-features/claude-code:1": {
+			"channel": "stable"
+		},
+		"ghcr.io/beepboop2025/liquilens-devcontainer-features/liquilens-evidence:1": {},
+		"ghcr.io/zafnz/devcontainer-features/jqweb:1": {
+			"version": "latest"
+		},
+		"ghcr.io/raine-works/devcontainer-features/bun:1": {},
+		"ghcr.io/raine-works/devcontainer-features/deno:1": {},
+		"ghcr.io/raine-works/devcontainer-features/node:1": {
+			"nodeVersion": "lts"
+		}
+	}
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
